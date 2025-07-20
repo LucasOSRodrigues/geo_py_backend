@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-import models
+from src import models
 
 def adicionar_usuario(db: Session, email: str, nome: str):
     usuario = db.query(models.Usuario).filter_by(email=email).first()
